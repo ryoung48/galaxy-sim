@@ -1,0 +1,1 @@
+Please reference AGENTS.md.
