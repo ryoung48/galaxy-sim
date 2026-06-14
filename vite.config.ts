@@ -4,11 +4,12 @@ import path from "path"
 import { defineConfig } from "vite"
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+	base: command === "serve" ? "/" : "/galaxy-sim/",
 	plugins: [react(), tailwindcss()],
 	resolve: {
 		alias: {
 			"@": path.resolve(__dirname, "./src"),
 		},
 	},
-})
+}))
