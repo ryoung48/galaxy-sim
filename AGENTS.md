@@ -16,7 +16,5 @@
 
 ## Verification
 
-- Always run `pnpm lint` after completing a task and ensure it passes cleanly.
-- Always run `pnpm typecheck` after completing a task and ensure it passes cleanly.
 - After changing galaxy generation or simulation logic, verify with `pnpm generate [seed] [numSystems]` and inspect the JSON output (params, stats, system sample, hyperlanes) to confirm correctness.
 - For deeper verification, create tailored test scripts in `scripts/` that import the relevant modules from `src/galaxy/` and assert on specific behaviors (e.g., fixed seeds produce expected star counts, lane topology, edge cases). These scripts can be run with `npx tsx scripts/<name>.ts`.

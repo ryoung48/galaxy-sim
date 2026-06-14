@@ -5,7 +5,7 @@ import { defineConfig } from "vite"
 
 // https://vite.dev/config/
 export default defineConfig(({ command }) => ({
-	base: command === "serve" ? "/" : "/galaxy-sim/",
+	base: command === "serve" ? "/" : "./",
 	plugins: [react(), tailwindcss()],
 	resolve: {
 		alias: {
