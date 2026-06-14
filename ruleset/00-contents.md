@@ -1,23 +1,17 @@
 # Interstellar Nation Simulator — Core Ruleset v1
 
-A minimal, fully-specified ruleset for emergent galactic narratives.
+A compact ruleset for a turn-based galaxy simulation that produces emergent stories.
 
 ## Reading Order
 
-1. [01-foundations.md](./01-foundations.md) — core assumptions, simulation frame, and resource model
-2. [02-world-state.md](./02-world-state.md) — the entities that exist and the attributes they carry
-3. [03-galaxy-setup.md](./03-galaxy-setup.md) — galaxy generation and default tunable constants
-4. [04-turn-structure.md](./04-turn-structure.md) — strict global phase order
-5. [05-phase-rules.md](./05-phase-rules.md) — the rules executed in each phase
-6. [06-design-notes.md](./06-design-notes.md) — mechanic-to-story mapping and optional future levers
+1. [01-world-state.md](./01-world-state.md) — the entities that exist and the attributes they carry
+2. [02-galaxy-setup.md](./02-galaxy-setup.md) — how the current project builds a galaxy, how the sim would initialize, and the default constants
+3. [03-phase-rules.md](./03-phase-rules.md) — the turn order and what happens in each phase
 
 ## Structure
 
-This reorganization separates the ruleset into six concerns:
+The ruleset is organized into three parts:
 
-- Foundations: what must always be true
-- World state: what exists in the simulation
-- Setup: how a fresh galaxy starts
-- Turn structure: when things happen
-- Phase rules: what each phase does
-- Design notes: why the rules create the intended stories
+- World state: the things that exist in the simulation
+- Setup: how the galaxy is created and how a simulation starts
+- Phase rules: the order of play and the rules for each phase
