@@ -19,6 +19,13 @@ body,
 	overflow: hidden;
 }
 
+body.docs-mode,
+body.docs-mode #root {
+	height: auto;
+	min-height: 100%;
+	overflow: auto;
+}
+
 @theme inline {
 	--font-heading: var(--font-sans);
 	--font-sans: "Oxanium Variable", sans-serif;
@@ -140,5 +147,121 @@ body,
 	}
 	html {
 		@apply font-sans;
+	}
+}
+
+@layer components {
+	.rules-prose {
+		color: rgba(255, 255, 255, 0.86);
+		font-size: 1rem;
+		line-height: 1.8;
+	}
+
+	.rules-prose > * + * {
+		margin-top: 1.2rem;
+	}
+
+	.rules-prose h1,
+	.rules-prose h2,
+	.rules-prose h3 {
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		line-height: 1.2;
+		text-transform: uppercase;
+		color: white;
+	}
+
+	.rules-prose h1 {
+		font-size: 2rem;
+	}
+
+	.rules-prose h2 {
+		margin-top: 2.5rem;
+		font-size: 1.35rem;
+	}
+
+	.rules-prose h3 {
+		margin-top: 2rem;
+		font-size: 1rem;
+	}
+
+	.rules-prose p,
+	.rules-prose li,
+	.rules-prose blockquote {
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	.rules-prose strong {
+		color: white;
+		font-weight: 600;
+	}
+
+	.rules-prose a {
+		color: rgb(125, 232, 255);
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.rules-prose ul,
+	.rules-prose ol {
+		padding-left: 1.25rem;
+	}
+
+	.rules-prose li + li {
+		margin-top: 0.35rem;
+	}
+
+	.rules-prose blockquote {
+		border-left: 2px solid rgba(125, 232, 255, 0.45);
+		padding-left: 1rem;
+		font-style: italic;
+	}
+
+	.rules-prose code {
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		background: rgba(255, 255, 255, 0.06);
+		padding: 0.15rem 0.35rem;
+		font-size: 0.9em;
+	}
+
+	.rules-prose pre {
+		overflow-x: auto;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		background: rgba(0, 0, 0, 0.3);
+		padding: 1rem;
+	}
+
+	.rules-prose pre code {
+		border: 0;
+		background: transparent;
+		padding: 0;
+	}
+
+	.rules-prose table {
+		display: block;
+		overflow-x: auto;
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	.rules-prose th,
+	.rules-prose td {
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		padding: 0.7rem 0.8rem;
+		text-align: left;
+		vertical-align: top;
+	}
+
+	.rules-prose th {
+		background: rgba(255, 255, 255, 0.06);
+		color: white;
+		font-size: 0.78rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.rules-prose hr {
+		border: 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
 	}
 }

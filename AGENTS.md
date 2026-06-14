@@ -12,9 +12,5 @@
 - All heavy computation (galaxy generation, star placement, simulation ticks, etc.) must run in a WebWorker to keep the main thread responsive.
 - Data passed between the main thread and workers must use typed arrays (`Float64Array`, `Uint32Array`, etc.) — no boxing/unboxing or structured clone of large plain objects. Minimize copy overhead by transferring `ArrayBuffer` ownership via `postMessage` transfers.
 - Worker entry points should accept a `SharedArrayBuffer` where possible so both sides can coordinate without copying.
-- Use `pnpm generate [seed] [numSystems]` to run galaxy generation from the CLI and review the output as JSON. This runs the same algorithm used in the browser worker but outputs structured data for inspection and debugging.
-
-## Verification
-
-- After changing galaxy generation or simulation logic, verify with `pnpm generate [seed] [numSystems]` and inspect the JSON output (params, stats, system sample, hyperlanes) to confirm correctness.
+- Use `pnpm generate [code]` to run galaxy generation from the CLI and review the output as JSON. This runs the same algorithm used in the browser worker but outputs structured data for inspection and debugging.
 - For deeper verification, create tailored test scripts in `scripts/` that import the relevant modules from `src/galaxy/` and assert on specific behaviors (e.g., fixed seeds produce expected star counts, lane topology, edge cases). These scripts can be run with `npx tsx scripts/<name>.ts`.
