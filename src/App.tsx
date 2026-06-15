@@ -42,8 +42,13 @@ function App() {
 	}, [])
 
 	useEffect(() => {
-		document.body.classList.toggle("docs-mode", route.kind === "rules")
-		return () => document.body.classList.remove("docs-mode")
+		const isDocsMode = route.kind === "rules"
+		document.documentElement.classList.toggle("docs-mode", isDocsMode)
+		document.body.classList.toggle("docs-mode", isDocsMode)
+		return () => {
+			document.documentElement.classList.remove("docs-mode")
+			document.body.classList.remove("docs-mode")
+		}
 	}, [route.kind])
 
 	if (route.kind === "rules" && rulesPage) {
